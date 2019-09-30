@@ -32,12 +32,17 @@ function TicTacToe(){
 
     if(turn % 2 === 0){
       let player = "1";
-      checkForWinner(board, player);
+      if(checkForWinner(board, player)){
+        buttonActivities();
+      }
+      
       player1.takeTurn();
       turn++;
     }else{
       let player = "2";
-      checkForWinner(board, player);
+      if(checkForWinner(board, player)){
+        buttonActivities();
+      }
       player2.takeTurn();
       turn++;
     }
@@ -46,32 +51,46 @@ function TicTacToe(){
 }
 
 function checkForWinner(board,player){
+  var win = false;
   var pos = board.positions;
   if(pos[0].innerText !== "" && pos[0].innerText === pos[1].innerText && pos[1].innerText === pos[2].innerText && pos[2].innerText === pos[3].innerText && pos[3].innerText === pos[4].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[5].innerText !== "" && pos[5].innerText === pos[6].innerText && pos[6].innerText === pos[7].innerText && pos[7].innerText === pos[8].innerText && pos[8].innerText === pos[9].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[10].innerText !== "" && pos[10].innerText === pos[11].innerText && pos[11].innerText === pos[12].innerText && pos[12].innerText === pos[13].innerText && pos[13].innerText === pos[14].innerText){
   alert("Player " + player + " won!");
+  win = true;
   }else if(pos[15].innerText !== "" && pos[15].innerText === pos[16].innerText && pos[16].innerText === pos[17].innerText && pos[17].innerText === pos[18].innerText && pos[18].innerText === pos[19].innerText){
   alert("Player " + player + " won!");
+  win = true;
   }else if(pos[20].innerText !== "" && pos[20].innerText === pos[21].innerText && pos[21].innerText === pos[22].innerText && pos[22].innerText === pos[23].innerText && pos[23].innerText === pos[24].innerText){
   alert("Player " + player + " won!");
+  win = true;
   }else if(pos[0].innerText !== "" && pos[0].innerText === pos[5].innerText && pos[5].innerText === pos[10].innerText && pos[10].innerText === pos[15].innerText && pos[15].innerText === pos[20].innerText){
   alert("Player " + player + " won!");
+  win = true;
   }else if(pos[1].innerText !== "" && pos[1].innerText === pos[6].innerText && pos[6].innerText === pos[11].innerText && pos[11].innerText === pos[16].innerText && pos[16].innerText === pos[21].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[2].innerText !== "" && pos[2].innerText === pos[7].innerText && pos[7].innerText === pos[12].innerText && pos[12].innerText === pos[17].innerText && pos[17].innerText === pos[22].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[3].innerText !== "" && pos[3].innerText === pos[8].innerText && pos[8].innerText === pos[13].innerText && pos[13].innerText === pos[18].innerText && pos[18].innerText === pos[23].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[4].innerText !== "" && pos[4].innerText === pos[9].innerText && pos[9].innerText === pos[14].innerText && pos[14].innerText === pos[19].innerText && pos[19].innerText === pos[24].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[0].innerText !== "" && pos[0].innerText === pos[6].innerText && pos[6].innerText === pos[12].innerText && pos[12].innerText === pos[18].innerText && pos[18].innerText === pos[24].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }else if(pos[4].innerText !== "" && pos[4].innerText === pos[8].innerText && pos[8].innerText === pos[12].innerText && pos[12].innerText === pos[16].innerText && pos[16].innerText === pos[20].innerText){
     alert("Player " + player + " won!");
+    win = true;
   }
+  return win;
 }
 
 function Player1(board){
